@@ -19,15 +19,15 @@ module.exports = function(app){
 		res.sendFile(path.join(__dirname + '/../public/contact.html'));
 	});
 
-	app.get('/testimonial', function(req, res){
+	app.get('/testimonials', function(req, res){
 		res.sendFile(path.join(__dirname + '/../public/testimonial.html'));
 	});
 
-	app.get('/NewPatient', function(req, res){
+	app.get('/newpatient', function(req, res){
 		res.sendFile(path.join(__dirname + '/../public/NewPatient.html'));
 	});
 
-	app.get('/Newsletter', function(req, res){
+	app.get('/newsletter', function(req, res){
 		res.sendFile(path.join(__dirname + '/../public/Newsletter.html'));
 	});
 

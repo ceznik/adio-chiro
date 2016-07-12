@@ -1,0 +1,24 @@
+{
+  "name": "adiochiro",
+  "version": "1.0.0",
+  "description": "Website for chirpractor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceznik/adio-chiro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ceznik/adio-chiro/issues"
+  },
+  "homepage": "https://github.com/ceznik/adio-chiro#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "router": "^1.1.4"
+  }
+}

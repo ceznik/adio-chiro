@@ -1,0 +1,27 @@
+{
+  "name": "adio-chiro",
+  "version": "1.0.0",
+  "description": "demo website for chiropractic client",
+  "main": "chironews.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceznik/adio-chiro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ceznik/adio-chiro/issues"
+  },
+  "homepage": "https://github.com/ceznik/adio-chiro#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.20.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.4",
+    "morgan": "^1.7.0",
+    "request": "^2.73.0"
+  }
+}

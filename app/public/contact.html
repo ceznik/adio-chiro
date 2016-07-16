@@ -1,19 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Adio Corrective Chiropractic</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Adio Corrective Chiropractic</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
+<!-- Navigation Bar -->
 
 <body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="newsletter.html">Newsletter</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Contact information -->
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <h3>Contact Us</h3>
+                <div class="contact info">
+                    <p>Location : 467 Sylvan Ave Englewood Cliffs, New Jersey 07632</p>
+                    <p>Phone Number : (201) 567-0525</p>
+                    <p>Office Hours:</p>
+                    <p>
+                        Mon-Tue: 7:00 am - 10:00 am and 3:30 pm - 6:30 pm
+                        <br> Wed: 3:30 pm - 6:30 pm
+                        <br>Thu: 7:00 am - 10:00 am and 3:30 pm - 6:30 pm
+                        <br>Fri-Sun: CLOSED
+                    </p>
+                </div>
+                <!-- Contact Form -->
+                <form action="/contact" method="POST" id="contact-form">
+                    <ul>
+                        <li>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required="required">
+                        </li>
+                        <li>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required="required">
+                        </li>
+                        <li>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required="required"></textarea>
+                        </li>
+                    </ul>
+                    <input type="submit">
+                </form>
+            </div>
 
+            <div class="col s5" offset-s1">
+                <div id="googleMap"></div>
+            </div>
+        </div>
+    </div>
 
+<<<<<<< HEAD:public/contact.html
+    <!-- Google Maps -->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+=======
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
@@ -28,52 +86,36 @@
       </div>
     </nav>
   </div>
+>>>>>>> master:app/public/contact.html
+
+    <script>
+    var myCenter = new google.maps.LatLng(40.877917, -73.951408);
+
+    function initialize() {
+        var mapProp = {
+            center: myCenter,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        var marker = new google.maps.Marker({
+            position: myCenter,
+        });
+
+        marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({
+            content: "Adio Corrective Chiropractic"
+        });
+
+        infowindow.open(map, marker);
+    }
 
 
-  <main class="container">
-    
-      <h3>Contact Us</h3>
-
-      <div class="contact info">
-      <p>Location : 467 Sylvan Ave Englewood Cliffs, New Jersey 07632</p>
-      <p>Phone Number : (201) 567-0525</p>
-      <p>Office Hours:</p>
-      <p>
-        Mon-Tue:  
-        7:00 am - 10:00 am and 
-        3:30 pm - 6:30 pm
-        <br> Wed:  
-        3:30 pm - 6:30 pm
-        <br>Thu:  
-        7:00 am - 10:00 am and 
-        3:30 pm - 6:30 pm
-        <br>Fri-Sun: CLOSED
-      </p>
-      </div>
-
-
-      <form id="contact-form">
-        <ul>
-          <li>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required="required">
-          </li>
-          <li>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required="required">
-          </li>
-          <li>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required="required"></textarea>
-          </li>
-        </ul>
-        <input type="submit">
-      </form>
-
-   
-  </main>
-
-
-
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </body>
+
 </html>

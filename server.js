@@ -1,61 +1,42 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var session = require('express-session');
-
+var methodOverride = require('method-override');
+var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 3000; 	// set the port
-var staticContentFolder;
+
+var logger = require('morgan');
+var mongoose = require('mongoose');
+
 
 //some basic config
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
-// app.use(bodyParser.json({type:'application/vnd.api+json'}));
-
-// session
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
-
-app.use(express.static(__dirname + '/public'));
-
-app.listen(PORT,function() {
-	console.log('App listening on PORT: '+ PORT);
-});
-
-app.get('/', function (req, res){
-	res.send("this is my contact page");
-})
-
-app.post('/asdf', function(req, res){
-	console.log('this is working');
-	console.log(req.body);
-
-
-})
-var path = require('path');
-
-
-
-var app = express();
-var PORT = process.env.PORT || 8080;
-
-
-
-// Sets up the Express app to handle data parsing
-
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
+app.use(logger('dev'));
 
 
 app.use(express.static(path.join(__dirname, '/app/public')));
 
+mongoose.connect('mongodb://localhost/chirodata');
+var db = mongoose.connection;
+
+db.on('error', function(err) {
+    console.log('Mongoose connection error: ', err);
+});
+
+db.once('open', function() {
+    console.log('Mongoose connection successful.');
+});
+
+
+app.use(methodOverride('_method'));
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({
+	defaultLayout: 'backnews'
+}));
+app.set('view engine', 'handlebars');
 
 
 //ROUTES

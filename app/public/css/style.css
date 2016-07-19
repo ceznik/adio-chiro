@@ -14,17 +14,25 @@ nav .brand-logo {
 
 #background1{
   background-size : cover;
+  background-color: white;
 
 }
-
+h2 {
+  float:right;
+}
 
 .nav-wrapper{
   background-color: #b71c1c;
 }
 p {
   line-height: 2rem;
+  display: inline-block;
 }
 
+#company-logo {
+
+
+}
 .button-collapse {
   color: #26a69a;
 }
@@ -78,6 +86,6 @@ footer.page-footer {
 /*google maps*/
 #googleMap {
   width: 600px;
-  height: 500px;
+  height: 550px;
   margin-top: 100px;
 }

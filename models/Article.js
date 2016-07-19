@@ -20,4 +20,5 @@ var ArticleSchema = new Schema({
 });
 
 var Article = mongoose.model('Article', ArticleSchema);
+console.log("Article Schema Loaded");
 module.exports = Article;

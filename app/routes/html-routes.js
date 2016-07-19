@@ -1,5 +1,10 @@
 var path = require('path');
 
+var chironews = require('../../controllers/chironews.js');
+
+var testnews = [
+{}];
+
 module.exports = function(app){
 
 	// HTML GET Requests
@@ -12,7 +17,11 @@ module.exports = function(app){
 	});
 
 	app.get('/backhealth', function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/backhealth.html'));
+		//insert code here that fetches data at random intervals
+		chironews.check(function(data){
+			console.log(data);
+			res.render('index', {data});
+		});
 	});
 
 	app.get('/contact', function(req, res){
@@ -34,6 +43,7 @@ module.exports = function(app){
 	// If no matching route is found default to home
 	app.use(function(req, res){
 		res.sendFile(path.join(__dirname + '/../public/index.html'));
+		
 	});
 
 }

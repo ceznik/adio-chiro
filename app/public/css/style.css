@@ -28,10 +28,11 @@ p {
   line-height: 2rem;
   display: inline-block;
 }
-
-#company-logo {
-
-
+#article-image{
+    float:left;
+}
+#article-text {
+  float:right;
 }
 .button-collapse {
   color: #26a69a;

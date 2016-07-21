@@ -32,12 +32,8 @@ module.exports = function(app){
 		res.sendFile(path.join(__dirname + '/../public/testimonial.html'));
 	});
 
-	app.get('/newpatient', function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/NewPatient.html'));
-	});
-
-	app.get('/newsletter', function(req, res){
-		res.sendFile(path.join(__dirname + '/../public/Newsletter.html'));
+	app.get('/patientcenter', function(req, res){
+		res.sendFile(path.join(__dirname + '/../public/patientcenter.html'));
 	});
 
 	// If no matching route is found default to home

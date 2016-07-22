@@ -17,16 +17,12 @@ nav .brand-logo {
   background-color: white;
 
 }
-h2 {
-  float:right;
-}
 
 .nav-wrapper{
   background-color: #b71c1c;
 }
 p {
   line-height: 2rem;
-  display: inline-block;
 }
 #article-image{
     float:left;
@@ -73,6 +69,7 @@ p {
 
 footer.page-footer {
   margin: 0;
+  background-color: #b71c1c;
 }
 
 #contact-form{

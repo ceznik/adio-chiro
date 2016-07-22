@@ -38,7 +38,7 @@ module.exports = function(app){
             to: "adiochiropractor1@gmail.com",
             subject: name + ' | New message !',
             // text: message + " this is the user's email " + email,
-            html: "<p>This is the message:</p>"+ message+ "<br><br><br><p>You have received a new Email from: <br><br>" + email+" </p>"
+            html: "<p>You have received a new Email from: <br><br>" + email + "</p>" + "<br><br><p>This is the message:</p>"+ message+ "</p>"
         }
         transporter.sendMail(mailOptions, function(error, response) {
             if (error) {

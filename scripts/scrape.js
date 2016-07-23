@@ -15,9 +15,9 @@ var scrape = function(cb){
 
 			var image = $(this).find('.item-thumb').html();
 
-			if (image == null){
-				image = '<img src="../app/public/images/chiropractor1.jpg" alt="spinal health image">';
-			}
+			// if (image == null){
+			// 	image = '<img src="/images/chiropractor1.jpg" alt="spinal health image" class="random_image_rpl">';
+			// }
 			var title = $(this).find('.item-title').text().trim();
 			var body = $(this).find('.item-excerpt').html();
 
@@ -28,7 +28,7 @@ var scrape = function(cb){
 
 		});
 		cb(result);
-		//console.log(result);
+		console.log(result);
 	});
 }
 //scrape();

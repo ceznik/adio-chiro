@@ -22,7 +22,7 @@ var productiondatabase = 'mongodb://heroku_p5s9cp4g:heroku_p5s9cp4g@ds023624.mla
 
 var databaseURL = 'mongodb://localhost/chirodata';
 if(process.env.MONGODB_URI) {
-	mongoose.connect(productiondatabase);
+	mongoose.connect(process.env.MONGODB_URI);
 } else {
 mongoose.connect(databaseURL);
 }

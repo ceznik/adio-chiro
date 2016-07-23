@@ -14,6 +14,10 @@ var scrape = function(cb){
 		$('article').each(function(i, element){
 
 			var image = $(this).find('.item-thumb').html();
+
+			if (image == null){
+				image = '<img src="../app/public/images/chiropractor1.jpg" alt="spinal health image">';
+			}
 			var title = $(this).find('.item-title').text().trim();
 			var body = $(this).find('.item-excerpt').html();
 
@@ -23,8 +27,9 @@ var scrape = function(cb){
 
 
 		});
-			cb(result);
+		cb(result);
+		//console.log(result);
 	});
 }
-
+//scrape();
 module.exports = scrape;

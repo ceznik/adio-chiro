@@ -35,12 +35,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
 }
 
-#article-image{
+/*.article-image{
     float:left;
 }
-#article-text {
+.article-text {
   float:right;
-}
+  background-color: red;
+}*/
 .button-collapse {
   color: #26a69a;
 }

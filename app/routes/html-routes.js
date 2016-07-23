@@ -15,10 +15,12 @@ module.exports = function(app){
 
 	app.get('/', function(req, res){
 		res.sendFile(path.join(__dirname + '/../public/index.html'));
+		chironews.fetch();
 	});
 
 	app.get('/backhealth', function(req, res){
 		//insert code here that fetches data at random intervals
+		
 		chironews.check(function(data){
 			console.log(data);
 			res.render('index', {data});

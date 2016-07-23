@@ -19,7 +19,7 @@ app.use(logger('dev'));
 
 app.use(express.static(path.join(__dirname, '/app/public')));
 
-mongoose.connect('mongodb://localhost/chirodata');
+mongoose.connect('mongodb://article_viewer:adiochiro@ds023624.mlab.com:23624/heroku_p5s9cp4g');
 var db = mongoose.connection;
 
 db.on('error', function(err) {

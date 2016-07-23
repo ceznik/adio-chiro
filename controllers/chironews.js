@@ -21,21 +21,21 @@ exports.fetch = function(){
 					console.log(err);
 				}
 				if (res === null){
-				var article = new Article({
-					title:obj[i][0],
-					image:obj[i][1],
-					body:obj[i][2]
-				});
-				article.save(function(err, doc){
-					if(err){
+					var article = new Article({
+						title:obj[current][0],
+						image:obj[current][1],
+						body:obj[current][2]
+					});
+					article.save(function(err, doc){
+						if(err){
 						console.log(err);
-					} else {
+						} else {
 						console.log(doc);
-					}	
+						}	
 		//check to see if entry exist in DB, add if it doesn't
 			//console.log("fetching");	
 			// });
-				});
+					});
 				}
 			});
 		}

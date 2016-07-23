@@ -14,16 +14,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 
 
 app.use(express.static(path.join(__dirname, '/app/public')));
+var productiondatabase = 'mongodb://heroku_p5s9cp4g:heroku_p5s9cp4g@ds023624.mlab.com:23624/heroku_p5s9cp4g';
 
 var databaseURL = 'mongodb://localhost/chirodata';
 if(process.env.MONGODB_URI) {
-	mongoose.connect(process.env.MONGODB_URI);
+	mongoose.connect(productiondatabase);
 } else {
-	mongoose.connect(databaseURL);
+mongoose.connect(databaseURL);
 }
 var db = mongoose.connection;
 

@@ -4,15 +4,15 @@ var Article = require('../models/Article.js');
 
 //export this function as "fetch"
 exports.fetch = function(){
+	console.log("hit fetch--------------");
 	scrape(function(data){
 		var obj = data; 
-		//console.log(obj);
+		console.log("DATA");
+		console.log(obj);
 		for (var i in obj) {
 			addIfNotFound(i);
+
 		}
-
-		//check to see if entry exist in DB, add if it doesn't
-
 		function addIfNotFound(current) {
 			Article.findOne({
 				'article': obj[current].title
@@ -21,15 +21,21 @@ exports.fetch = function(){
 					console.log(err);
 				}
 				if (res === null){
-					var article = new Article(current);
-
-					article.save(function(err, doc){
-						if(err){
-							console.log(err);
-						} else {
-							console.log(doc);
-						}
-					});
+				var article = new Article({
+					title:obj[i][0],
+					image:obj[i][1],
+					body:obj[i][2]
+				});
+				article.save(function(err, doc){
+					if(err){
+						console.log(err);
+					} else {
+						console.log(doc);
+					}	
+		//check to see if entry exist in DB, add if it doesn't
+			//console.log("fetching");	
+			// });
+				});
 				}
 			});
 		}
@@ -47,4 +53,4 @@ exports.check = function(cb) {
       cb(doc);
     });
 };
-
+//fetch();

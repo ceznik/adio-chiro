@@ -28,6 +28,7 @@ var scrape = function(cb){
 
 		});
 		cb(result);
+		console.log("BLAAAAH");
 		console.log(result);
 	});
 }

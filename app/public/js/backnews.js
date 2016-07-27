@@ -1,9 +1,13 @@
 $(document).ready(function() {
-	$('.card').hide();
 	//alert("ready to render back news...");
-	$.getJSON('/check', function(data) {
-		mongoData = data;
-		//insert article data
-		alert("got the data");
-	});
+	var options = [
+	    {selector: '.article-image', offset: 200, callback: function(el){
+	    	Materialize.fadeInImage($(el).closest('img'));
+	    } },
+	    {selector: '.article-text', offset: 200, callback: function(el) {
+	      Materialize.showStaggeredList($(el));
+	    } },
+  	];
+  Materialize.scrollFire(options);
+
 });

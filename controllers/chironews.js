@@ -4,11 +4,11 @@ var Article = require('../models/Article.js');
 
 //export this function as "fetch"
 exports.fetch = function(){
-	console.log("hit fetch--------------");
+	//console.log("hit fetch--------------");
 	scrape(function(data){
 		var obj = data; 
-		console.log("DATA");
-		console.log(obj);
+		//console.log("DATA");
+		//console.log(obj);
 		for (var i in obj) {
 			addIfNotFound(i);
 

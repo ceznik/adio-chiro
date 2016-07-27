@@ -22,7 +22,7 @@ module.exports = function(app){
 		//insert code here that fetches data at random intervals
 		chironews.fetch();
 		chironews.check(function(data){
-			console.log(data);
+			//console.log(data);
 			res.render('index', {data});
 		});
 	});
